@@ -24,11 +24,12 @@ const average = (arr) => {
 console.log(average(arr));
 
 // Exercise4
-const calcuBMI = function(weight, height){
-    const bmi = weight / (height * height);
-    return bmi;
-};
-console.log(calcuBMI(45, 1.65));
+(function(){
+    weight = 50;
+    height = 1.70
+   BMI = weight / (height*height);
+   console.log(BMI);
+})();
 
 // Exercise5
 const products = [
