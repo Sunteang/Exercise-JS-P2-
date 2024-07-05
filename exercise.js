@@ -13,15 +13,15 @@ function sumNumber(num1, num2){
 console.log(sumNumber(23, 12));
 
 // Exercise3
-let numbers = [1, 2, 3, 4, 5];
-
-const totalAverage = (numbers) => {
-    const sum = numbers.reduce((total, number)=> total + number , 0);
-    const average = sum / numbers.length;
-    return average;
+let arr = [1, 2, 4, 4, 5];
+const average = (arr) => {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return sum/arr.length;
 };
-
-console.log(totalAverage(numbers));
+console.log(average(arr));
 
 // Exercise4
 const calcuBMI = function(weight, height){
