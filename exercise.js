@@ -85,21 +85,31 @@ function sortListsAscending(listNumber){
 console.log(sortListsAscending(listNumber))
 
 // Exercise9
-function getMedian(numbers){
-    numbers.sort((a, b)=> a - b);
+let numberList1 = [7,14,5,19,26,42,13];
+let numberList2 = [8,21,14,36,17,2,56,41];
 
-    const getMidIndex = Math.floor(numbers.length / 2);
-    if (numbers.length % 2 !==0){
-        return numbers[getMidIndex]
+function findMedian(numberList1){
+    let median;
+
+    for (let i = 0; i < numberList1.length ; i++){
+        for (let j = i+1 ; j < numberList1.length ; j++){
+            if ( numberList1[i]> numberList1[j]){
+                let storeNum = numberList1[i];
+                numberList1[i]= numberList1[j];
+                numberList1[j]= storeNum;
+            }
+        }
     }
-    return (numbers[getMidIndex-1]+ numbers[getMidIndex])/2;
-};
-
-const num1 =[ 1,3,5,6,7,8,9];
-const num2 =[ 1,3,5,6,7,8,9,1];
-
-console.log(getMedian(num1));
-console.log(getMedian(num2));
+    console.log(numberList1)
+    if (numberList1.length%2!==0){
+        median = numberList1[((numberList1.length+1)/2)-1] ;
+    }else{
+        median= (numberList1[((numberList1.length)/2)-1] + numberList1[(numberList1.length)/2])/2;
+    }
+    return median;
+}
+console.log("Median of odd length of the element: ",findMedian(numberList1))
+console.log("Median of even length of the element: ",findMedian(numberList2))
 
 // Exercise10
 function factorial(num){
