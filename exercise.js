@@ -58,19 +58,22 @@ console.log(isPasswordStrong("1324567"));
 console.log(isPasswordStrong("ogmypass101"));
 
 // Exercise7
-function countOfVowels(inputString){
-    const vowels = 'aeiouAEIOU';
-    let vowelCount = 0;
+let string = "New network connection detected";
 
-    for (let char of inputString){
-        if (vowels.includes(char)){
-            vowelCount++;
+function countVowels(string){
+    let vowels = ['a','e','i','o','u']
+    let count  = 0;
+
+    for (let i = 0 ; i < string.length ; i++){
+        for (let j = 0 ; j < vowels.length ; j++){
+            if (string[i] === vowels[j]){
+                count++;
+            }
         }
     }
-    return vowelCount;
-};
-
-console.log(countOfVowels("serey Sunteang Ios Org"));
+    return count;
+}
+console.log("Count Vowels: ", countVowels(string));
 
 // Exercise8
 const listNumber = [2, 4, 5, 1, 3, 8, 7, 6];
