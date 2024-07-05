@@ -28,7 +28,7 @@ const calcuBMI = function(weight, height){
     const bmi = weight / (height * height);
     return bmi;
 };
-console.log(calcuBMI(45, 165));
+console.log(calcuBMI(45, 1.65));
 
 // Exercise5
 const products = [
