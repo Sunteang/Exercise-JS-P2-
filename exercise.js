@@ -76,13 +76,23 @@ function countVowels(string){
 console.log("Count Vowels: ", countVowels(string));
 
 // Exercise8
-const listNumber = [2, 4, 5, 1, 3, 8, 7, 6];
+let listNumber = [3,1,8,7,9,5,6,12,34,2,4,23,67,43,56];
 
-function sortListsAscending(listNumber){
-    return listNumber.sort((a, b)=> a - b );
-};
+function sortNumber(listNumber){
+    for (let i = 0 ; i < listNumber.length ; i++){
+        for (let j = i + 1 ; j < listNumber.length ; j++){
+            if (listNumber[i]> listNumber[j]){
+                let storeNumber = listNumber[i];
+                listNumber[i] = listNumber[j];
+                listNumber[j] = storeNumber;
+            }
+        }
+    }
+    return listNumber;
+}
 
-console.log(sortListsAscending(listNumber))
+console.log(" sort a list of numbers in ascending order", sortNumber(listNumber))
+
 
 // Exercise9
 let numberList1 = [7,14,5,19,26,42,13];
